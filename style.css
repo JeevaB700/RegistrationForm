@@ -12,6 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center; /* Center horizontally */
   padding: 0;
   margin: 0;
   background: rgb(130, 106, 251);
@@ -23,7 +24,9 @@ body {
   justify-content: center;
   align-items: center;
   flex: 1;
-  margin-top: 50px; /* Adjust this value to control the gap from the top */
+  width: 100%;
+  padding: 20px; /* Add padding for spacing on mobile devices */
+  box-sizing: border-box;
 }
 
 .container {
@@ -75,6 +78,7 @@ body {
 .form .column {
   display: flex;
   column-gap: 15px;
+  flex-wrap: wrap;
 }
 
 .form .gender-box {
@@ -91,12 +95,13 @@ body {
 .form :where(.gender-option, .gender) {
   display: flex;
   align-items: center;
-  column-gap: 50px;
+  column-gap: 30px;
   flex-wrap: wrap;
 }
 
 .form .gender {
   column-gap: 5px;
+  margin-bottom: 10px;
 }
 
 .gender input {
@@ -149,11 +154,31 @@ footer {
 
 /* Responsive */
 @media screen and (max-width: 500px) {
-  .form .column {
-    flex-wrap: wrap;
+  body {
+    padding: 10px; /* Add padding to body for better spacing */
   }
-  .form :where(.gender-option, .gender) {
-    row-gap: 15px;
+
+  .wrapper {
+    margin-top: 20px; /* Adjust top margin for smaller screens */
+  }
+
+  .container {
+    padding: 15px; /* Reduce padding for smaller screens */
+    max-width: 100%; /* Ensure full width for the container */
+    box-shadow: none; /* Remove shadow if desired for simpler look on mobile */
+  }
+
+  .form .column {
+    flex-direction: column;
+    gap: 15px; /* Space between columns */
+  }
+
+  .form .input-box {
+    margin-top: 10px; /* Reduce margin for better spacing */
+  }
+
+  .form button {
+    font-size: 0.9rem; /* Slightly smaller font size for buttons */
   }
 }
 
